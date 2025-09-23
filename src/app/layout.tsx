@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import ToasterProvider from "@/components/providers/app/toaster-provider";
+import AppProviders from "@/components/providers/app";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -17,6 +17,9 @@ const geistMono = localFont({
 export const metadata: Metadata = {
   title: "Exam App",
   description: "Empower your learning journey with our smart exam platform.",
+  icons: {
+    icon: "/images/favicon.ico",
+  },
 };
 
 export default function RootLayout({
@@ -27,10 +30,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${geistMono.className} antialiased`}
       >
-        {children}
-        <ToasterProvider />
+        <AppProviders>{children}</AppProviders>
       </body>
     </html>
   );
