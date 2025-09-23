@@ -22,7 +22,7 @@ export const authOptions: NextAuthOptions = {
           throw new AppError("Email and password are required", 400);
         }
 
-        const response = await fetch(`${process.env.API}/auth/signin`, {
+        const response = await fetch(`${process.env.BASE_URL}/auth/signin`, {
           method: "POST",
           headers: {
             ...JSON_HEADER,
