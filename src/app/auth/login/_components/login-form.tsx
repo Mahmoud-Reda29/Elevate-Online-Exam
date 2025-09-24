@@ -17,6 +17,7 @@ import { Button } from "@/components/ui/button";
 import useLogin from "../_hooks/use-login";
 import Link from "next/link";
 import FormsError from "../../_components/forms-error";
+import FormsFooter from "../../_components/forms-footer";
 
 export default function LoginForm() {
   // Mutation
@@ -37,13 +38,13 @@ export default function LoginForm() {
   };
 
   return (
-    <div className="flex w-full flex-col gap-3 sm:w-4/6">
+    <div className="flex w-full flex-col gap-3">
       {/* Header */}
       <FormsHeader title="Login" />
 
       {/* Login Form */}
       <Form {...LoginForm}>
-        <form onSubmit={LoginForm.handleSubmit(onSubmitHandler)} className="w-full space-y-4">
+        <form onSubmit={LoginForm.handleSubmit(onSubmitHandler)} className="space-y-4">
           {/* Email */}
           <FormField
             control={LoginForm.control}
@@ -119,15 +120,8 @@ export default function LoginForm() {
         </form>
       </Form>
 
-      {/* Register */}
-      <div className="mt-9 text-center">
-        Don’t have an account?
-        <Link href={"/auth/register"}>
-          <Button variant={"link"} size={"default"}>
-            Create yours
-          </Button>
-        </Link>
-      </div>
+      {/* Footer */}
+      <FormsFooter page="login" />
     </div>
   );
 }

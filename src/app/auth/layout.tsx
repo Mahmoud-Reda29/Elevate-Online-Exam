@@ -8,12 +8,14 @@ export default function AuthLayout({
   return (
     <main className="grid min-h-screen w-full grid-cols-1 md:grid-cols-2">
       {/* Sidebar */}
-      <section className="hidden h-svh overflow-hidden bg-gray-250 md:flex">
+      <section className="hidden min-h-svh overflow-hidden bg-gray-250 md:flex">
         <SideBar />
       </section>
 
       {/* Auth Forms */}
-      <section className="flex items-center justify-center gap-3 px-5 sm:px-0">{children}</section>
+      <section className="flex w-full items-center justify-center gap-3 px-5 sm:px-32">
+        {children}
+      </section>
     </main>
   );
 }
