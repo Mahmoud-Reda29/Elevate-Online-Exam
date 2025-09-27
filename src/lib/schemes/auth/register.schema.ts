@@ -23,7 +23,7 @@ export const RegisterSchema = z
         /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/,
         "Password must contain at least one uppercase, lowercase, number, and special character",
       ),
-    rePassword: z.string().min(1, "Please confirm your password"),
+    rePassword: z.string().min(8, "Please confirm your password"),
 
     phone: z
       .string()

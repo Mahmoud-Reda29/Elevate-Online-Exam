@@ -13,7 +13,7 @@ export default function FormsFooter({ page }: FormsFooterProps) {
     <div className="mt-9 gap-2 text-center">
       Don’t have an account?
       <Link href={"/auth/register"}>
-        <Button variant={"link"} size={"default"}>
+        <Button type="button" variant={"link"} size={"default"}>
           Create yours
         </Button>
       </Link>
@@ -22,7 +22,7 @@ export default function FormsFooter({ page }: FormsFooterProps) {
     <div className="mt-9 text-center">
       Already have an account?
       <Link href={"/auth/login"}>
-        <Button variant={"link"} size={"default"}>
+        <Button type="button" variant={"link"} size={"default"}>
           Login
         </Button>
       </Link>

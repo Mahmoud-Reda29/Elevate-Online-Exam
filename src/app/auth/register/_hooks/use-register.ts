@@ -8,7 +8,6 @@ export default function useRegister() {
     mutationFn: async (data: RegisterFields) => {
       const response = await registerAction(data);
 
-      console.log("response :", response);
       if ("code" in response) {
         throw new Error(response?.message || "Login failed");
       }

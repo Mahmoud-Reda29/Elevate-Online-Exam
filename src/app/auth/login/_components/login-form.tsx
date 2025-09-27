@@ -98,7 +98,12 @@ export default function LoginForm() {
           {/* forgot passowrd button */}
           <div className="flex">
             <Link href="/auth/forgot-password" className="ml-auto">
-              <Button variant="link" size="default" className="p-0 text-sm font-normal">
+              <Button
+                type="button"
+                variant="link"
+                size="default"
+                className="p-0 text-sm font-normal"
+              >
                 Forgot your password?
               </Button>
             </Link>
