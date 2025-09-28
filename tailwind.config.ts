@@ -9,6 +9,10 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        inter: "var(--font-inter)",
+        "geist-mono": "var(--font-geist-mono)",
+      },
       boxShadow: {
         custom: "0px 6px 13.1px 4px rgba(0, 0, 0, 0.1)",
       },

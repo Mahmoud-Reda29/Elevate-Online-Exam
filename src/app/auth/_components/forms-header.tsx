@@ -9,7 +9,7 @@ export default function FormsHeader({ title, children }: FormsHeaderProps) {
   return (
     <div className="flex flex-col gap-2 pb-6">
       {/* title */}
-      <h2 className="text-3xl font-bold text-gray-800">{title}</h2>
+      <h2 className="font-inter text-3xl font-bold text-gray-800">{title}</h2>
 
       {/* Description if exists */}
       {children}
