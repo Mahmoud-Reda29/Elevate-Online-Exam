@@ -13,6 +13,7 @@ declare type MetaData = {
   currentPage: number;
   numberOfPages: number;
   limit: number;
+  nextPage: number;
 };
 
 declare type PaginatedResponse<T> = {

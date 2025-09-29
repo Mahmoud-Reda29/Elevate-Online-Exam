@@ -7,6 +7,15 @@ const nextConfig = {
       permanent: true,
     },
   ],
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "exam.elevateegy.com",
+        pathname: "/uploads/**",
+      },
+    ],
+  },
 };
 
 export default nextConfig;

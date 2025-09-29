@@ -1,11 +1,8 @@
 import { FolderCode } from "lucide-react";
 import Image from "next/image";
-import React, { Suspense } from "react";
+import React from "react";
 import NavLinks from "./nav-links";
 import UserDropDown from "./user-dropdown";
-import ProfileSkeleton from "@/components/skeletons/dashboard-sidebar/user-dropdown.skeleton";
-import { getServerSession } from "next-auth";
-import { authOptions } from "@/auth";
 
 export default async function SideBar() {
   return (

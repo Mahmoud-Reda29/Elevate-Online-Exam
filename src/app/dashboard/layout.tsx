@@ -10,12 +10,12 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
       <SideBar />
 
       {/* Content Area */}
-      <section className="flex h-full w-full flex-col">
+      <section className="flex h-screen w-full flex-col">
         {/* BreadCrumbs */}
         <NavBreadCrumbs />
 
         {/* Content */}
-        <div className="flex-1 bg-gray-50 p-6">{children}</div>
+        <div className="flex-1 overflow-y-auto bg-gray-50 px-6 pt-6">{children}</div>
       </section>
     </main>
   );

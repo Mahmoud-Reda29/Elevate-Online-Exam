@@ -1,15 +1,19 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { GraduationCap } from "lucide-react";
 import Header from "../_components/header";
+import DiplomasList from "./_components/diplomas-list";
+import DiplomasListSkeleton from "@/components/skeletons/diplomas/diplomas-list.skeleton";
 
-export default function page() {
+export default function Page() {
   return (
-    <div className="flex flex-col gap-6">
+    <div className="flex h-full flex-col gap-6">
       {/* Header */}
       <Header title="Diplomas" icon={<GraduationCap size={45} />} backlink={false} />
 
       {/* Diplomas List */}
-      <div>hell0 world</div>
+      <div id="scrollableDiv" className="z-0 overflow-y-auto scrollbar-hide">
+        <DiplomasList />
+      </div>
     </div>
   );
 }
