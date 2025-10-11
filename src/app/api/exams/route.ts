@@ -14,11 +14,12 @@ export async function GET(req: NextRequest) {
     }
 
     const { searchParams } = new URL(req.url);
-    const limit = searchParams.get("limit") ?? "10";
+    const subjectId = searchParams.get("subject");
     const page = searchParams.get("page") ?? "1";
+    const limit = searchParams.get("limit") ?? "10";
 
     const response = await fetch(
-      `${process.env.NEXT_PUBLIC_BASE_URL}/subjects?page=${page}&limit=${limit}`,
+      `${process.env.NEXT_PUBLIC_BASE_URL}/exams?subject=${subjectId}&page=${page}&limit=${limit}`,
       {
         headers: {
           token: token.token,

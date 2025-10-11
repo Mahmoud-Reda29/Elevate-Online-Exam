@@ -1,14 +1,14 @@
 "use client";
 
+import React from "react";
+import ExamItem from "./exam-item";
+import { useInfiniteExams } from "../_hooks/use-infinite-exams";
 import InfiniteScroll from "react-infinite-scroll-component";
-import DiplomaItem from "./diploma-item";
-import { useInfiniteDiplomas } from "../_hooks/use-infinite-diplomas";
 import { ChevronDown } from "lucide-react";
 
-export default function DiplomasList() {
-  const { diplomas, fetchNextPage, hasNextPage, isFetchingNextPage, isLoading, error } =
-    useInfiniteDiplomas();
-
+export default function ExamsList({ subjectId }: { subjectId: string }) {
+  const { exams, fetchNextPage, hasNextPage, isFetchingNextPage, isLoading, error } =
+    useInfiniteExams(subjectId);
   // Properly handle the fetchNextPage call
   const handleFetchNextPage = async () => {
     console.log("handleFetchNextPage called");
@@ -16,18 +16,9 @@ export default function DiplomasList() {
       await fetchNextPage();
     }
   };
-
-  if (isLoading) {
-    return <p>Loading initial data...</p>;
-  }
-
-  if (error) {
-    return <div className="">Error loading diplomas: {error.message}</div>;
-  }
-
   return (
     <InfiniteScroll
-      dataLength={diplomas.length}
+      dataLength={exams.length}
       next={handleFetchNextPage}
       hasMore={!!hasNextPage}
       loader={
@@ -39,11 +30,11 @@ export default function DiplomasList() {
       scrollThreshold={0.8}
       className="overflow-visible"
       scrollableTarget="scrollableDiv"
-      endMessage={<p className="text-center">End of list</p>}
+      endMessage={<p className="p-2 text-center">End of list</p>}
     >
-      <div className="grid h-full grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
-        {diplomas.map((diploma) => (
-          <DiplomaItem key={diploma._id} diploma={diploma} />
+      <div className="flex flex-col gap-4 bg-white px-6 pt-6">
+        {exams.map((exam) => (
+          <ExamItem key={exam._id} exam={exam} />
         ))}
       </div>
     </InfiniteScroll>

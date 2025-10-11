@@ -17,6 +17,7 @@ export default function UserDropDown() {
   // Session
   const { data: session, status } = useSession();
 
+  // loading
   if (status === "loading") return <ProfileSkeleton />;
 
   return (
@@ -37,7 +38,7 @@ export default function UserDropDown() {
           </p>
         </div>
 
-        {/* Dropdown aligned right */}
+        {/* User Dropdown Menu*/}
         <DropdownMenu>
           <DropdownMenuTrigger className="ml-auto p-1">
             <EllipsisVertical size={20} className="text-gray-500" />

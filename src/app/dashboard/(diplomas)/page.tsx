@@ -1,10 +1,9 @@
-import React, { Suspense } from "react";
+import React from "react";
 import { GraduationCap } from "lucide-react";
 import Header from "../_components/header";
 import DiplomasList from "./_components/diplomas-list";
-import DiplomasListSkeleton from "@/components/skeletons/diplomas/diplomas-list.skeleton";
 
-export default function Page() {
+export default function Diplomas() {
   return (
     <div className="flex h-full flex-col gap-6">
       {/* Header */}
